@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+ 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.mapper.UserMapper">
+
+    <select id="login" resultType="com.pojo.User">
+    select * from users002 where userId=#{userId};
+    </select>
+    
+    <select id="getuser" resultType="com.pojo.User">
+    select * from users002 where userId=#{userId};
+    </select>
+    
+    <update id="updatePwd" parameterType="com.pojo.User">
+    update users002 set userPwd=#{userPwd} where userId=#{userId}
+    </update>
+    
+
+</mapper>

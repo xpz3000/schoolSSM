@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+ 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.mapper.StudentMapper">
+	
+	<select id="stuShowMy" resultType="com.pojo.Student">
+    select * from students002 where userId=#{userId};
+    </select>
+    
+    <update id="stuUpdateMy" parameterType="com.pojo.Student">
+    update students002 set stuPhone=#{stuPhone},stuEmail=#{stuEmail},
+    stuAddress=#{stuAddress} where userId=#{userId}
+    </update>
+    
+    <select id="stuShowGrade"  resultType="com.pojo.Score">
+    select * from scores002 where userId=#{userId};
+    </select>
+</mapper>
